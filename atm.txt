@@ -1,0 +1,121 @@
+ Task 1 – User Login System (Basic)
+# Store 2–3 users in a dictionary: users = {"john": "1234", "alice": "4321"}
+# Ask for username and password.
+# Allow 3 attempts; use while loop.
+# Use if-else and break when login is successful.
+# ✅ Concepts covered: if-else, while, break
+
+# Task 2 – ATM Dashboard
+# 1. Check Balance
+# 2. Deposit Money
+# 3. Withdraw Money
+# 4. Logout
+
+# Task 3 – Add Transaction History
+# Create a list per user to store strings like: "Deposited ₹500", "Withdrew ₹200".
+# Add a 5th option to show history:
+# 5. View Transaction History
+
+# Task 4 – Add Validations
+# If user tries to withdraw more than their balance → show error.
+# Prevent deposits/withdrawals of negative or zero amounts.
+# ✅ Concepts covered: if, continue, error handling logic
+
+# 🔹 Task 5 – Add Pass Statement and Exit Flow
+# If the user enters an invalid menu option, use pass to ignore and show menu again.
+# Use break to exit from main menu.
+# ✅ Concepts covered: pass, break, clean exit from loop
+
+# 💡 Bonus Challenges (If You Want More Difficulty Later)
+# Add PIN change feature.
+# Store user data (balance, history) in a nested dictionary.
+# Implement logout to go back to login screen (multi-user session).
+# Add support for multiple users using loop over a users dictionary.
+# Time-stamp transactions using datetime (optional for Unit 2).
+
+
+# 1. Transaction Logging with String Immutability
+# 💡 Strings in Python are immutable—this means you can’t change a string in-place, only create a new one.
+# 📘 Task:
+# Let the user write a short note/message (e.g., "Gave ₹100 to friend").
+# Add this note along with the deposit/withdraw transaction in the log.
+# Try modifying a character of the string (msg[0] = 'X') → catch the error and explain it.
+# Ask user to retype full message instead if a typo occurs (simulate immutability in action).
+# ✅ Concepts covered: string immutability, string formatting, error handling
+
+# 🔹 2. Create Nested Dictionaries for Multi-User Accounts
+# python
+# Copy
+# Edit
+# users = {
+#     "john": {
+#         "password": "1234",
+#         "balance": 1000,
+#         "history": []
+#     },
+#     "alice": {
+#         "password": "4321",
+#         "balance": 2000,
+#         "history": []
+#     }
+# }
+# 📘 Task:
+# Access data like users["john"]["balance"] and users["john"]["history"].append(...)
+# Practice loop through dictionary keys: for username in users: ...
+# ✅ Concepts covered: nested dictionaries, dictionary access and update, loops
+
+# 🔹 3. Masked Login Input (String Slicing & Loop Logic)
+# 📘 Task:
+# After 3 failed attempts, mask the username by replacing all but the first and last letters with *.
+# Example: john → j**n
+# You’ll need to slice and reconstruct a string (cannot modify in-place).
+# python
+# Copy
+# Edit
+# masked = username[0] + '*'*(len(username)-2) + username[-1]
+# ✅ Concepts covered: string slicing, immutability, secure UX feature
+
+# 🔹 4. Use of range() in Retry or Loan EMI Calculator
+# 📘 Task:
+# Use a loop with range(1, 4) to limit retries or simulate EMI payments per month.
+# python
+# Copy
+# Edit
+# for month in range(1, 13):
+#     print(f"Month {month}: Pay ₹{emi}")
+# ✅ Concepts covered: for loop, range, formatting
+
+# 🔹 5. Security Audit Feature (String Analysis)
+# 📘 Task:
+# Let admin access all usernames and check if any password is too simple:
+# Shorter than 4 characters
+# Contains only digits
+# Use string methods like .isnumeric(), .isalpha(), len()
+# ✅ Concepts covered: string methods, dictionary iteration, validation logic
+
+# 🔹 6. Use else with for/while Loops (Rare but Powerful)
+# 📘 Task:
+# While searching for a transaction type ("Withdraw" or "Loan"), use a for loop with else:
+# python
+# Copy
+# Edit
+# for tx in user["history"]:
+#     if "Loan" in tx:
+#         print("Found loan entry!")
+#         break
+# else:
+#     print("No loan-related transaction found.")
+# ✅ Concepts covered: for-else, string search, list loop logic
+
+# 🔹 7. Implement a Fault-Tolerant Feature Using pass
+# 📘 Task:
+# Create an option like "Future Services (Coming Soon)".
+# Inside the option’s code block, use pass:
+
+# python
+# Copy
+# Edit
+# elif choice == 6:
+#     pass  # Feature to be added later
+# ✅ Concepts covered: pass statement
+
